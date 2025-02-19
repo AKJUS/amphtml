@@ -1,0 +1,20 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - istanbul-middleware > body-parser > debug:
+        patched: '2025-02-19T14:05:25.335Z'
+        id: 'npm:debug:20170905'
+        path: istanbul-middleware > body-parser > debug
+  'npm:minimatch:20160620':
+    - istanbul-middleware > archiver > glob > minimatch:
+        patched: '2025-02-19T14:05:25.335Z'
+        id: 'npm:minimatch:20160620'
+        path: istanbul-middleware > archiver > glob > minimatch
+  'npm:ms:20170412':
+    - istanbul-middleware > body-parser > debug > ms:
+        patched: '2025-02-19T14:05:25.335Z'
+        id: 'npm:ms:20170412'
+        path: istanbul-middleware > body-parser > debug > ms
