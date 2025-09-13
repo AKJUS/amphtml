@@ -7,29 +7,40 @@
   "browser": "dist/amp-toolbox-cache-url.umd.js",
   "scripts": {
     "build": "npx rollup -c",
-    "prepublish": "npm run build",
+    "prepublish": "npm run snyk-protect && npm run build",
     "serve": "npx rollup -c -w",
     "test": "npm-run-all build test-node test-browser lint",
     "test-node": "npx jasmine --config=jasmine.json",
     "test-browser": "npx karma start --single-run --browsers ChromeHeadless karma.conf.js",
     "lint": "npx eslint .",
-    "lint-fix": "npx eslint . --fix"
+    "lint-fix": "npx eslint . --fix",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ampproject/amp-toolbox.git"
   },
-  "keywords": ["amp", "amp-toolbox", "amp-url-api"],
+  "keywords": [
+    "amp",
+    "amp-toolbox",
+    "amp-url-api"
+  ],
   "author": "AMPHTML Team",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/ampproject/amp-toolbox/issues"
   },
   "homepage": "https://github.com/ampproject/amp-toolbox#readme",
-  "files": ["dist", "package.json", "../LICENSE", "README.md"],
+  "files": [
+    "dist",
+    "package.json",
+    "../LICENSE",
+    "README.md"
+  ],
   "dependencies": {
     "punycode": "2.3.1",
-    "url-parse": "1.5.10"
+    "url-parse": "1.5.10",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@ampproject/rollup-plugin-closure-compiler": "0.27.0",
@@ -49,5 +60,6 @@
     "@rollup/plugin-node-resolve": "15.3.0",
     "rollup-plugin-serve": "3.0.0",
     "semver": "7.6.3"
-  }
+  },
+  "snyk": true
 }
